@@ -3,8 +3,8 @@ require "httparty"
 
 class SlideShare
   include HTTParty
-  @@API_KEY
-  @@SECRET
+  @@API_KEY = nil
+  @@SECRET = nil
   
   def self.API_KEY=(value)
     @@API_KEY = value
@@ -26,7 +26,7 @@ class SlideShare
       params[:api_key] = @@API_KEY
       
       timestamp = Time.now.to_i
-      ss_hash = Digest::SHA1.hexdigest (@@SECRET + timestamp.to_s)
+      ss_hash = Digest::SHA1.hexdigest(@@SECRET + timestamp.to_s)
       
       params[:ts] = timestamp
       params[:hash] = ss_hash
