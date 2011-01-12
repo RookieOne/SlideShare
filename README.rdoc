@@ -1,0 +1,19 @@
+= Slide Share API
+
+This is a simple gem that utilizes HTTParty and the Slide Share API.
+	
+	gem install slide_share
+
+For more information on the Slide Share API check out http://www.slideshare.net/developers
+
+== Set API Key and Shared Key
+
+You need an API key and a shared key. You get both when you apply for an API key on SlideShare's website.
+
+	SlideShare.API_KEY = YOUR_API_KEY
+  SlideShare.SECRET = YOUR_SECRET_KEY
+	
+== Get Slides by user
+
+	SlideShare.get_slideshows_by_user(*username*)
+	
