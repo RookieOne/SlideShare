@@ -17,7 +17,7 @@ class SlideShare
   def self.get_slideshows_by_user(username)
     params = create_parameters
     params[:username_for] = username
-    get("http://www.slideshare.net/api/2/get_slideshows_by_user", :query => params)
+    get("https://www.slideshare.net/api/2/get_slideshows_by_user", :query => params)
   end
   
   private
